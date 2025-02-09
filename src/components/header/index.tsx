@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header className="w-full min-h-14 border-b p-4 md:p-6">
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
-        <h2 className="text-2xl lg:text-3xl font-bold text-slate-800">
+        <h2 className="text-2xl lg:text-3xl font-bold text-blue-600">
           Portfolio
         </h2>
         {/* menu items */}
@@ -37,12 +37,14 @@ export default function Header() {
           {menuItems.map((menuItem) => (
             <li
               key={menuItem.menu}
-              className="text-slate-800 hover:scale-105 hover:text-slate-600 transition-all ease-in-out duration-300"
+              className="text-slate-800 hover:scale-105 hover:text-blue-600 transition-all ease-in-out duration-300"
             >
               <a href={menuItem.path}>{menuItem.menu}</a>
             </li>
           ))}
         </ul>
+
+        <Button className="hidden md:inline-flex px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 transition-all ease-in-out duration-300">Hire Me</Button>
          
          {/* mobile menu */}
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -57,13 +59,13 @@ export default function Header() {
               </Button>
             </div>
           </SheetTrigger>
-          <SheetContent side="left">
+          <SheetContent side="left" className="flex flex-col">
             <SheetHeader>
               <SheetTitle className="p-2 text-2xl font-semibold">
                 Portfolio
               </SheetTitle>
             </SheetHeader>
-            <ul className="mt-4 space-y-4">
+            <ul className="mt-4 space-y-4 flex-1">
               {menuItems.map((menuItem) => (
                 <li key={menuItem.menu} className="text-lg">
                   <a
@@ -76,6 +78,9 @@ export default function Header() {
                 </li>
               ))}
             </ul>
+            <SheetFooter>
+            <Button className="w-full px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 transition-all ease-in-out duration-300">Hire Me</Button>
+            </SheetFooter>
           </SheetContent>
         </Sheet>
       </div>
