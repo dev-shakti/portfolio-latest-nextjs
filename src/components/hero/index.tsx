@@ -1,17 +1,24 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
-
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="flex-1 px-6 py-12 w-full">
-      <div className="w-full h-full max-w-7xl mx-auto flex flex-col justify-end md:justify-center">
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight ">Hello, I'm Sakti Sumant Das</h1>
-         {/* Typing Effect */}
-         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-blue-600 mt-2">
+    <section className="flex-1 px-6 py-12 w-full h-full overflow-hidden">
+      <motion.div
+        className="w-full h-full max-w-7xl mx-auto flex flex-col justify-end md:justify-center"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight ">
+          Hello, I'm Sakti Sumant Das
+        </h1>
+        {/* Typing Effect */}
+        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-blue-600 mt-2">
          <Typewriter
             words={["Web Developer", "Full Stack Developer", "Frontend Developer","ReactJS Developer"]}
             loop={true}
@@ -23,9 +30,10 @@ export default function Hero() {
           />
         </h2>
         <p className="mt-3 text-base md:text-lg text-gray-700 tracking-tight leading-relaxed max-w-2xl">
-          Passionate web developer with expertise in building scalable and modern web applications. 
-          Experienced in working with front-end and back-end technologies, ensuring seamless user 
-          experiences and high-performance solutions.
+          Passionate web developer with expertise in building scalable and
+          modern web applications. Experienced in working with front-end and
+          back-end technologies, ensuring seamless user experiences and
+          high-performance solutions.
         </p>
 
         {/* button groups */}
@@ -37,11 +45,10 @@ export default function Hero() {
             variant="outline"
             className="px-5 py-3 text-lg flex items-center gap-2 group hover:text-blue-500 hover:border hover:border-blue-500 hover:scale-105 transition-all duration-300"
           >
-             Resume
-            <ArrowRight className="w-5 h-5 ransition-transform duration-300 group-hover:rotate-90"/>
+            Resume
+            <ArrowRight className="w-5 h-5 ransition-transform duration-300 group-hover:rotate-90" />
           </Button>
         </div>
-
 
         {/* Social Icons with Next.js Link */}
         <div className="flex items-center space-x-6 mt-10">
@@ -82,7 +89,7 @@ export default function Hero() {
             </svg>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

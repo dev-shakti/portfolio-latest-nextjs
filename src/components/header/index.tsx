@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
 import { useState } from "react";
+import {motion} from "framer-motion"
 
 const menuItems = [
   { path: "#", menu: "Home" },
@@ -28,7 +29,12 @@ export default function Header() {
 
   return (
     <header className="w-full min-h-14 border-b p-4 md:p-6">
-      <div className="w-full max-w-7xl mx-auto flex justify-between items-center">
+      <motion.div 
+      className="w-full max-w-7xl mx-auto flex justify-between items-center"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.9, ease: "easeIn" }}
+      >
         <h2 className="text-2xl lg:text-3xl font-bold text-blue-600">
           Portfolio
         </h2>
@@ -83,7 +89,7 @@ export default function Header() {
             </SheetFooter>
           </SheetContent>
         </Sheet>
-      </div>
+      </motion.div>
     </header>
   );
 }
