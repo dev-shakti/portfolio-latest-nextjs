@@ -2,6 +2,7 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Image from "next/image";
 import Skills from "../components/skills";
+import Works from "@/components/works";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
       </div>
       <Skills />
+      <Works/>
     </>
   );
 }
