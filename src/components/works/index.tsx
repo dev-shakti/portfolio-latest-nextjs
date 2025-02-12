@@ -20,7 +20,7 @@ export default function Works() {
   const isInView = useInView(ref, { once: false, margin: "-50px" });
 
   return (
-    <section className="px-6 py-12 md:py-16 w-full">
+    <section id="works" className="px-6 py-12 md:py-16 w-full">
       <div ref={ref} className="w-full max-w-7xl mx-auto">
         <motion.h2
           initial="hidden"

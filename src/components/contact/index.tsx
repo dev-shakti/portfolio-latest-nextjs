@@ -35,7 +35,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="px-6 py-12 md:py-16 lg:pb-24  w-full overflow-x-hidden">
+    <section id="contact" className="px-6 py-12 md:py-16 lg:pb-24  w-full overflow-x-hidden">
       <div ref={ref} className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Section - Contact Info */}
         <motion.div 

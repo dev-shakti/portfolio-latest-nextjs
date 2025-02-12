@@ -18,7 +18,6 @@ import {motion} from "framer-motion"
 
 const menuItems = [
   { path: "#", menu: "Home" },
-  { path: "#about", menu: "About us" },
   { path: "#skills", menu: "Skills" },
   { path: "#works", menu: "Works" },
   { path: "#contact", menu: "Contact" },

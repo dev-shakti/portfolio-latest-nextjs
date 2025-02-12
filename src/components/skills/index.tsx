@@ -25,11 +25,8 @@ export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once:false, margin: "-50px" });
 
-
-  console.log(isInView);
-
   return (
-    <section className="px-6 py-12 md:py-16 w-full">
+    <section id="skills" className="px-6 py-12 md:py-16 w-full">
       {/* Wrapper for inView detection */}
       <div ref={ref} className="w-full max-w-7xl mx-auto">
         {/* Heading Animation */}
