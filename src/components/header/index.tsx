@@ -50,7 +50,7 @@ export default function Header() {
           ))}
         </ul>
 
-        <Button className="hidden md:inline-flex px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all ease-in-out duration-300">Hire Me</Button>
+        <Button className="hidden md:inline-flex px-4 py-2 rounded-lg  bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all ease-in-out duration-300">Hire Me</Button>
          
          {/* mobile menu */}
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -85,7 +85,7 @@ export default function Header() {
               ))}
             </ul>
             <SheetFooter>
-            <Button className="w-full px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 transition-all ease-in-out duration-300">Hire Me</Button>
+            <Button className="w-full px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all ease-in-out duration-300">Hire Me</Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>

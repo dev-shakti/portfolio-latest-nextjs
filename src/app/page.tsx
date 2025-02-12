@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import Image from "next/image";
 import Skills from "../components/skills";
 import Works from "@/components/works";
+import Contact from "@/components/contact";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </div>
       <Skills />
       <Works/>
+      <Contact/>
     </>
   );
 }
