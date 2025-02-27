@@ -52,7 +52,7 @@ export default function Skills() {
           animate={isInView ? "visible" : "hidden"}
           variants={{
             hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            visible: { opacity: 1, transition: { staggerChildren: 0.4 } },
           }}
           className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8"
         >
@@ -65,7 +65,7 @@ export default function Skills() {
                   opacity: 1,
                   y: 0,
                   scale: 1,
-                  transition: { duration: 0.5 },
+                  transition: { duration: 0.6 },
                 },
               }}
             >
