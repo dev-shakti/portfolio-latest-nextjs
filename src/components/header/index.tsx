@@ -29,24 +29,21 @@ export default function Header() {
 
   useEffect(() => {
     function handleScroll() {
-      if (window.scrollY > 75) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
+      console.log("Scroll Y:", window.scrollY);
+      setShow(window.scrollY > 150); // 🔼 Increased threshold
     }
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   return (
-    <header className={`${show ? "bg-slate-200" : ""} fixed top-0 z-999 w-full min-h-14 p-4 md:p-6 bg-transparent`}>
+    <header className={`${show ? "bg-white shadow-xl z-50" : "z-50"} fixed top-0  w-full min-h-14 p-4 md:p-6 bg-transparent`}>
       <motion.div
         className="w-full max-w-7xl mx-auto flex justify-between items-center"
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.9, ease: "easeIn" }}
+        transition={{ duration: 0.7, ease: "easeIn" }}
       >
         <h2 className="text-2xl lg:text-3xl font-bold text-blue-600">
           Portfolio
