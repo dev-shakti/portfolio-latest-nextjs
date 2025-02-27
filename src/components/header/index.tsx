@@ -13,8 +13,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
-import { useState } from "react";
-import {motion} from "framer-motion"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const menuItems = [
   { path: "#", menu: "Home" },
@@ -25,14 +25,28 @@ const menuItems = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [show, setShow] = useState<boolean>(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 75) {
+        setShow(true);
+      } else {
+        setShow(false);
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="w-full min-h-14 border-b p-4 md:p-6">
-      <motion.div 
-      className="w-full max-w-7xl mx-auto flex justify-between items-center"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.9, ease: "easeIn" }}
+    <header className={`${show ? "bg-slate-200" : ""} fixed top-0 z-999 w-full min-h-14 p-4 md:p-6 bg-transparent`}>
+      <motion.div
+        className="w-full max-w-7xl mx-auto flex justify-between items-center"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.9, ease: "easeIn" }}
       >
         <h2 className="text-2xl lg:text-3xl font-bold text-blue-600">
           Portfolio
@@ -49,9 +63,11 @@ export default function Header() {
           ))}
         </ul>
 
-        <Button className="hidden md:inline-flex px-4 py-2 rounded-lg  bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all ease-in-out duration-300">Hire Me</Button>
-         
-         {/* mobile menu */}
+        <Button className="hidden md:inline-flex px-4 py-2 rounded-lg  bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all ease-in-out duration-300">
+          Hire Me
+        </Button>
+
+        {/* mobile menu */}
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
           <SheetTrigger asChild>
             <div className="md:hidden">
@@ -84,7 +100,9 @@ export default function Header() {
               ))}
             </ul>
             <SheetFooter>
-            <Button className="w-full px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all ease-in-out duration-300">Hire Me</Button>
+              <Button className="w-full px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all ease-in-out duration-300">
+                Hire Me
+              </Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>

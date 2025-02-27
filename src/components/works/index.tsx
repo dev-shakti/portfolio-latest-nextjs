@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
+import { Button } from "../ui/button";
 
 const works = [
   { image: "https://via.placeholder.com/300x200.png?text=Project+1" },
@@ -60,7 +61,7 @@ export default function Works() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
           }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8"
         >
           {works.map((work, index) => (
             <motion.div
@@ -75,16 +76,37 @@ export default function Works() {
                 },
               }}
             >
-              <Card className="rounded-xl shadow-lg hover:shadow-2xl p-6 bg-white cursor-pointer transition-all duration-300 hover:scale-105 overflow-hidden">
+              <Card className="rounded-xl group shadow-lg hover:shadow-2xl bg-white cursor-pointer overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="w-full h-48 relative">
+                  <div className="w-full h-56 relative">
                     <Image
                       src="https://picsum.photos/300/200"
                       fill
                       alt="Project Image"
-                      className="object-cover"
-                      unoptimized={true} // ⬅️ Disable optimization
+                      className="object-cover "
+                      unoptimized={true}
+                      
                     />
+
+                    {/* ✅ Corrected Overlay Animation */}
+                    <div className="absolute bottom-0 left-0 w-full h-full translate-y-full bg-slate-900 opacity-0  group-hover:opacity-100 group-hover:translate-y-0 transion-all ease-in-out duration-500">
+                      <div className="relative z-10 w-full h-full p-6 flex flex-col justify-center items-center text-white">
+                        <h4 className="text-lg font-semibold text-gray-300 mb-2">
+                          Project Title
+                        </h4>
+                        <p className="text-sm text-gray-300 mb-4">
+                          Lorem ipsum dolor sit amet.
+                        </p>
+                        <div className="flex items-center gap-3">
+                          <Button className="bg-blue-600 hover:bg-blue-700 text-white cursor-pointer">
+                            View Demo
+                          </Button>
+                          <Button className="bg-gray-700 hover:bg-gray-800 text-white cursor-pointer">
+                            View GitHub
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
