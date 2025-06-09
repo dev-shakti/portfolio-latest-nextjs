@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { Typewriter } from "react-simple-typewriter";
@@ -20,7 +19,7 @@ export default function Hero() {
         {/* Typing Effect */}
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-blue-600 mt-2">
          <Typewriter
-            words={["Web Developer", "Full Stack Developer", "Frontend Developer","ReactJS Developer"]}
+            words={["Full Stack Developer","MERN Stack Developer", "Frontend Developer","ReactJS Developer"]}
             loop={true}
             cursor
             cursorStyle="|"
@@ -30,7 +29,7 @@ export default function Hero() {
           />
         </h2>
         <p className="mt-3 text-base md:text-lg text-gray-700 tracking-tight leading-relaxed max-w-2xl">
-          Passionate web developer with expertise in building scalable and
+          Passionate Full stack developer with expertise in building scalable and
           modern web applications. Experienced in working with front-end and
           back-end technologies, ensuring seamless user experiences and
           high-performance solutions.
@@ -38,8 +37,8 @@ export default function Hero() {
 
         {/* button groups */}
         <div className="flex items-center space-x-6 mt-6">
-          <Button className="px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300">
-            Hire Me
+          <Button className="px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300" asChild>
+           <a href="#works">Hire Me</a> 
           </Button>
           <Button
             variant="outline"
@@ -52,7 +51,7 @@ export default function Hero() {
 
         {/* Social Icons with Next.js Link */}
         <div className="flex items-center space-x-6 mt-10">
-          <Link href="https://linkedin.com" target="_blank">
+          <a href="https://www.linkedin.com/in/sakti-sumant-das" target="_blank"   rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-700 hover:text-blue-600 hover:scale-110 transition-all duration-300"
@@ -61,9 +60,9 @@ export default function Hero() {
             >
               <path d="M4 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V3zm4 16h3v-7h-3v7zm1.5-8.25a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM14 19h3v-4.5c0-1.5-.5-2.5-2-2.5s-2 .96-2 2.5V19z" />
             </svg>
-          </Link>
+          </a>
 
-          <Link href="https://github.com" target="_blank">
+          <a href="https://github.com/dev-shakti" target="_blank"   rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-700 hover:text-black hover:scale-110 transition-all duration-300"
@@ -76,9 +75,9 @@ export default function Hero() {
                 clipRule="evenodd"
               />
             </svg>
-          </Link>
+          </a>
 
-          <Link href="mailto:your-email@gmail.com">
+          <a href="mailto:mailto:shakti.20k@gmail.com" target="_blank" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-700 hover:text-red-600 hover:scale-110 transition-all duration-300"
@@ -87,7 +86,7 @@ export default function Hero() {
             >
               <path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm3.5 1.5v9l6.5-4.5-6.5-4.5zm7.5 4.5 6.5 4.5v-9l-6.5 4.5zm-1 1.5-6.5 4.5h13l-6.5-4.5z" />
             </svg>
-          </Link>
+          </a>
         </div>
       </motion.div>
     </section>

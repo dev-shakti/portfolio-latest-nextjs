@@ -10,7 +10,12 @@ import {
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const skills = [
+type SkillType={
+  title:string;
+  image:string;
+}
+
+const skills:SkillType[] = [
   { title: "HTML", image: "/assets/html.png" },
   { title: "CSS", image: "/assets/css.png" },
   { title: "JavaScript", image: "/assets/javascript.png" },

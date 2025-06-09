@@ -12,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -36,9 +36,13 @@ export default function Header() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
-    <header className={`${show ? "bg-white shadow-xl z-50" : "z-50"} fixed top-0  w-full min-h-14 p-4 md:p-6 bg-transparent`}>
+    <header
+      className={`${
+        show ? "bg-white shadow-xl z-50" : "z-50"
+      } fixed top-0  w-full min-h-14 p-4 md:p-6 bg-transparent`}
+    >
       <motion.div
         className="w-full max-w-7xl mx-auto flex justify-between items-center"
         initial={{ y: -100, opacity: 0 }}
@@ -59,10 +63,12 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <div className="flex items-center gap-6">
 
-        <Button className="hidden md:inline-flex px-4 py-2 rounded-lg  bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all ease-in-out duration-300">
-          Hire Me
-        </Button>
+          <Button asChild className="hidden md:inline-flex px-4 py-2 rounded-lg  bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all ease-in-out duration-300">
+           <a href="#works">Hire Me</a> 
+          </Button>
+        </div>
 
         {/* mobile menu */}
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>

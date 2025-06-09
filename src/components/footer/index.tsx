@@ -1,6 +1,5 @@
 "use client";
 import { ChevronUp } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function FooterSection() {
@@ -35,7 +34,7 @@ export default function FooterSection() {
 
         {/* Social Icons */}
         <div className="flex items-center space-x-6 mt-4 md:mt-0">
-          <Link href="https://linkedin.com" target="_blank">
+          <a href="https://www.linkedin.com/in/sakti-sumant-das" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 text-gray-300 hover:text-blue-600 hover:scale-105 transition-all duration-300"
@@ -44,9 +43,9 @@ export default function FooterSection() {
             >
               <path d="M4 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V3zm4 16h3v-7h-3v7zm1.5-8.25a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5zM14 19h3v-4.5c0-1.5-.5-2.5-2-2.5s-2 .96-2 2.5V19z" />
             </svg>
-          </Link>
+          </a>
 
-          <Link href="https://github.com" target="_blank">
+          <a href="https://github.com/dev-shakti" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 text-gray-300 hover:text-black hover:scale-105 transition-all duration-300"
@@ -59,9 +58,9 @@ export default function FooterSection() {
                 clipRule="evenodd"
               />
             </svg>
-          </Link>
+          </a>
 
-          <Link href="mailto:your-email@gmail.com">
+          <a href="mailto:shakti.20k@gmail.com" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-6 h-6 text-gray-300 hover:text-red-600 hover:scale-105 transition-all duration-300"
@@ -70,7 +69,7 @@ export default function FooterSection() {
             >
               <path d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm3.5 1.5v9l6.5-4.5-6.5-4.5zm7.5 4.5 6.5 4.5v-9l-6.5 4.5zm-1 1.5-6.5 4.5h13l-6.5-4.5z" />
             </svg>
-          </Link>
+          </a>
         </div>
 
         {/* Back to Top Button */}
