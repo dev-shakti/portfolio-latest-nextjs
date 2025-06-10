@@ -31,7 +31,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once:false, margin: "-50px" });
 
   return (
-    <section id="skills" className="px-6 py-12 md:py-16 w-full">
+    <section id="skills" className="px-6 py-12 md:py-16 w-full bg-background">
       {/* Wrapper for inView detection */}
       <div ref={ref} className="w-full max-w-7xl mx-auto">
         {/* Heading Animation */}
@@ -46,7 +46,7 @@ export default function Skills() {
               transition: { duration: 0.6, ease: "easeOut" },
             },
           }}
-          className="text-center mb-8 py-1 font-semibold text-3xl lg:text-4xl tracking-tight leading-tight relative after:content-[''] after:w-20 after:h-1 after:bg-blue-600 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:rounded-full"
+          className="text-center mb-8 py-1 text-foreground font-semibold text-3xl lg:text-4xl tracking-tight leading-tight relative after:content-[''] after:w-20 after:h-1 after:bg-blue-600 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:rounded-full"
         >
           Skills
         </motion.h2>
@@ -74,7 +74,7 @@ export default function Skills() {
                 },
               }}
             >
-              <Card className="rounded-xl shadow-lg hover:shadow-2xl p-6 bg-white cursor-pointer transition-all duration-300 hover:scale-105">
+              <Card className="rounded-xl shadow-lg hover:shadow-2xl p-6 bg-background cursor-pointer transition-all duration-300 hover:scale-105">
                 <CardContent className="">
                   <div className="flex justify-center">
                     <img
@@ -83,7 +83,7 @@ export default function Skills() {
                       className="w-20 h-20 md:w-24 md:h-24 object-cover"
                     />
                   </div>
-                  <h4 className="text-lg text-center font-semibold text-gray-700 tracking-tight leading-tight mt-5">
+                  <h4 className="text-lg text-center font-semibold text-muted-foreground tracking-tight leading-tight mt-5">
                     {skill.title}
                   </h4>
                 </CardContent>

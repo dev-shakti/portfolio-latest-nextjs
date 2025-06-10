@@ -15,6 +15,7 @@ import {
 import { MenuIcon, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { ModeToggle } from "../mode-toggle";
 
 const menuItems = [
   { path: "#", menu: "Home" },
@@ -40,8 +41,8 @@ export default function Header() {
   return (
     <header
       className={`${
-        show ? "bg-white shadow-xl z-50" : "z-50"
-      } fixed top-0  w-full min-h-14 p-4 md:p-6 bg-transparent`}
+        show ? "bg-muted" : "bg-transparent"
+      } fixed top-0  w-full min-h-14 p-4 md:p-6 z-50 transition-all duration-300`}
     >
       <motion.div
         className="w-full max-w-7xl mx-auto flex justify-between items-center"
@@ -49,26 +50,27 @@ export default function Header() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeIn" }}
       >
-        <h2 className="text-2xl lg:text-3xl font-bold text-blue-600">
-          Portfolio
+        <h2 className="text-2xl lg:text-3xl font-bold flex items-center gap-1">
+          <span className="bg-blue-600 text-background px-2 py-1 rounded">
+            Dev
+          </span>
+          <span className="hover:text-blue-600 text-foreground transition-colors">
+            Sakti
+          </span>
         </h2>
+
         {/* menu items */}
         <ul className="hidden md:flex space-x-6">
           {menuItems.map((menuItem) => (
             <li
               key={menuItem.menu}
-              className="text-slate-800 hover:scale-105 hover:text-blue-600 transition-all ease-in-out duration-300"
+              className="text-foreground hover:scale-105 hover:text-blue-600 transition-all ease-in-out duration-300"
             >
               <a href={menuItem.path}>{menuItem.menu}</a>
             </li>
           ))}
         </ul>
-        <div className="flex items-center gap-6">
-
-          <Button asChild className="hidden md:inline-flex px-4 py-2 rounded-lg  bg-blue-600 hover:bg-blue-700 hover:scale-105 transition-all ease-in-out duration-300">
-           <a href="#works">Hire Me</a> 
-          </Button>
-        </div>
+        <ModeToggle />
 
         {/* mobile menu */}
         <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -76,26 +78,31 @@ export default function Header() {
             <div className="md:hidden">
               <Button
                 variant="outline"
-                size="sm"
-                className="rounded-md bg-transparent border border-gray-400 p-2 hover:bg-gray-200 transition-all duration-300"
+                size="icon"
+                className="rounded-full bg-transparent border border-boder  hover:bg-muted transition-all duration-300"
               >
-                <MenuIcon className="w-6 h-6 text-gray-800" />
+                <MenuIcon className="w-6 h-6 text-foreground" />
               </Button>
             </div>
           </SheetTrigger>
           <SheetContent side="left" className="flex flex-col">
             <SheetHeader>
-              <SheetTitle className="p-2 text-2xl font-semibold">
-                Portfolio
+              <SheetTitle className="text-xl font-semibold flex items-center gap-1">
+                <span className="bg-blue-600 text-background px-2 py-1 rounded">
+                  Dev
+                </span>
+                <span className="hover:text-blue-600 text-foreground transition-colors">
+                  Sakti
+                </span>
               </SheetTitle>
             </SheetHeader>
             <ul className="mt-4 space-y-4 flex-1">
               {menuItems.map((menuItem) => (
-                <li key={menuItem.menu} className="text-lg">
+                <li key={menuItem.menu} className="text-medium">
                   <a
                     href={menuItem.path}
                     onClick={() => setMenuOpen(false)}
-                    className="block p-2 hover:bg-gray-100 hover:pl-1 rounded-md transition-all ease-in-out duration-300"
+                    className="block p-2 text-foreground hover:bg-muted/30 hover:pl-3 rounded-md transition-all ease-in-out duration-300"
                   >
                     {menuItem.menu}
                   </a>
@@ -103,7 +110,7 @@ export default function Header() {
               ))}
             </ul>
             <SheetFooter>
-              <Button className="w-full px-4 py-2 rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all ease-in-out duration-300">
+              <Button className="w-full px-4 py-2 rounded-lg text-foreground bg-blue-600 hover:bg-blue-700 transition-all ease-in-out duration-300">
                 Hire Me
               </Button>
             </SheetFooter>

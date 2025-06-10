@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="flex-1 px-6 py-12 w-full h-full overflow-hidden">
+    <section className="flex-1 px-6 py-12 w-full h-full overflow-hidden bg-background">
       <motion.div
         className="w-full h-full max-w-7xl mx-auto flex flex-col justify-end md:justify-center"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight ">
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
           Hello, I'm Sakti Sumant Das
         </h1>
         {/* Typing Effect */}
@@ -33,7 +33,7 @@ export default function Hero() {
             delaySpeed={1000}
           />
         </h2>
-        <p className="mt-3 text-base md:text-lg text-gray-700 tracking-tight leading-relaxed max-w-2xl">
+        <p className="mt-3 text-base md:text-lg text-muted-foreground tracking-tight leading-relaxed max-w-2xl">
           Passionate Full stack developer with expertise in building scalable
           and modern web applications. Experienced in working with front-end and
           back-end technologies, ensuring seamless user experiences and
@@ -43,7 +43,7 @@ export default function Hero() {
         {/* button groups */}
         <div className="flex items-center space-x-6 mt-6">
           <Button
-            className="px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300"
+            className="px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 text-foreground hover:scale-105 transition-all duration-300"
             asChild
           >
             <a href="#works">Hire Me</a>
@@ -70,10 +70,11 @@ export default function Hero() {
             href="https://www.linkedin.com/in/sakti-sumant-das"
             target="_blank"
             rel="noopener noreferrer"
+             className="rounded-full p-2 flex justify-center items-center bg-muted/70 hover:bg-muted transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-gray-700 hover:text-blue-600 hover:scale-110 transition-all duration-300"
+              className="w-6 h-6 text-muted-foreground hover:text-blue-600 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -85,10 +86,11 @@ export default function Hero() {
             href="https://github.com/dev-shakti"
             target="_blank"
             rel="noopener noreferrer"
+             className="rounded-full p-2 flex justify-center items-center bg-muted/70 hover:bg-muted transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-gray-700 hover:text-black hover:scale-110 transition-all duration-300"
+              className="w-6 h-6 text-muted-foreground hover:text-black hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -104,10 +106,11 @@ export default function Hero() {
             href="mailto:mailto:shakti.20k@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="rounded-full p-2 flex justify-center items-center bg-muted/70 hover:bg-muted transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8 text-gray-700 hover:text-red-600 hover:scale-110 transition-all duration-300"
+              className="w-6 h-6 text-muted-foreground hover:text-red-600 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
             >

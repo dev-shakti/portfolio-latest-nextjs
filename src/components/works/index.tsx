@@ -90,7 +90,7 @@ export default function Works() {
   const isInView = useInView(ref, { once: false, margin: "-50px" });
 
   return (
-    <section id="works" className="px-6 py-12 md:py-16 w-full">
+    <section id="works" className="px-6 py-12 md:py-16 w-full bg-muted/30">
       <div ref={ref} className="w-full max-w-7xl mx-auto">
         <motion.h2
           initial="hidden"
@@ -118,7 +118,7 @@ export default function Works() {
               transition: { duration: 0.6, ease: "easeOut" },
             },
           }}
-          className="text-center mb-8 text-lg font-semibold text-gray-700 tracking-tight leading-tight"
+          className="text-center mb-8 text-lg font-semibold text-muted-foreground tracking-tight leading-tight"
         >
           Some of my latest projects
         </motion.p>
@@ -159,24 +159,24 @@ export default function Works() {
                   </div>
 
                   {/* Overlay - Fixed position with hidden scroll */}
-                  <div className="absolute inset-0 bg-slate-900/90 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-y-auto no-scrollbar p-6 flex flex-col">
+                  <div className="absolute inset-0 bg-background opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out overflow-y-auto no-scrollbar p-6 flex flex-col">
                     {/* Content remains the same */}
-                    <h4 className="text-lg font-semibold text-gray-100 mb-2">
+                    <h4 className="text-lg font-semibold text-foreground mb-2">
                       {work.title}
                     </h4>
-                    <p className="text-sm text-gray-300 mb-4">{work.desc}</p>
+                    <p className="text-sm text-muted-foreground mb-4">{work.desc}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {work.stacks.map((stack, i) => (
                         <div
                           key={i}
-                          className="text-xs px-2 py-1 rounded-md bg-gray-700 text-gray-200"
+                          className="text-xs px-2 py-1 rounded-md bg-muted text-foreground"
                         >
                           {stack}
                         </div>
                       ))}
                     </div>
                     <div className="mt-auto flex gap-3">
-                      <Button asChild>
+                      <Button asChild className="bg-foreground text-background">
                         <a
                           href={work.demoLink}
                           target="_blank"
@@ -186,7 +186,7 @@ export default function Works() {
                           View Demo
                         </a>
                       </Button>
-                      <Button variant="secondary" asChild>
+                      <Button variant="secondary" asChild className="bg-muted text-foreground">
                         <a
                           href={work.GitHubLink}
                           target="_blank"

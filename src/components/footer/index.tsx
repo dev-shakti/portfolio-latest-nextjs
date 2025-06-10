@@ -1,6 +1,7 @@
 "use client";
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 export default function FooterSection() {
   const [showButton, setShowButton] = useState(false);
@@ -23,21 +24,26 @@ export default function FooterSection() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <footer className="w-full px-6 py-12 bg-slate-800 text-white">
+    <footer className="w-full px-6 py-8 border border-border bg-muted/30 text-foreground">
       <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Copyright Text */}
         <div className="text-center md:text-left">
-          <p className="text-gray-300 text-sm tracking-tight leading-tight">
+          <p className="text-muted-foreground text-sm tracking-tight leading-tight">
             | Copyright © 2025 SAKTI SUMANT DAS All rights reserved |
           </p>
         </div>
 
         {/* Social Icons */}
         <div className="flex items-center space-x-6 mt-4 md:mt-0">
-          <a href="https://www.linkedin.com/in/sakti-sumant-das" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/sakti-sumant-das"
+            target="_blank"
+            rel="noopener noreferrer"
+             className="rounded-full p-2 flex justify-center items-center bg-muted/70 hover:bg-muted transition-all duration-300"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-gray-300 hover:text-blue-600 hover:scale-105 transition-all duration-300"
+              className="w-5 h-5 text-muted-foreground hover:text-blue-600 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -45,10 +51,15 @@ export default function FooterSection() {
             </svg>
           </a>
 
-          <a href="https://github.com/dev-shakti" target="_blank">
+          <a
+            href="https://github.com/dev-shakti"
+            target="_blank"
+            rel="noopener noreferrer"
+             className="rounded-full p-2 flex justify-center items-center bg-muted/70 hover:bg-muted transition-all duration-300"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-gray-300 hover:text-black hover:scale-105 transition-all duration-300"
+              className="w-5 h-5 text-muted-foreground hover:text-black hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -60,10 +71,15 @@ export default function FooterSection() {
             </svg>
           </a>
 
-          <a href="mailto:shakti.20k@gmail.com" target="_blank">
+          <a
+            href="mailto:mailto:shakti.20k@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full p-2 flex justify-center items-center bg-muted/70 hover:bg-muted transition-all duration-300"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-gray-300 hover:text-red-600 hover:scale-105 transition-all duration-300"
+              className="w-5 h-5 text-muted-foreground hover:text-red-600 hover:scale-110 transition-all duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
             >
@@ -74,13 +90,14 @@ export default function FooterSection() {
 
         {/* Back to Top Button */}
         {showButton && (
-          <button
+          <Button
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-500 text-white p-3 rounded-full shadow-lg transition-all duration-300"
+            size="icon"
+            className="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-500 text-white p-2 rounded-full shadow-lg transition-all duration-300"
             aria-label="Back to top"
           >
             <ChevronUp className="w-6 h-6" />
-          </button>
+          </Button>
         )}
       </div>
     </footer>
