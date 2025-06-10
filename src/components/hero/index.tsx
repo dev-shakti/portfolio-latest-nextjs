@@ -18,8 +18,13 @@ export default function Hero() {
         </h1>
         {/* Typing Effect */}
         <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-blue-600 mt-2">
-         <Typewriter
-            words={["Full Stack Developer","MERN Stack Developer", "Frontend Developer","ReactJS Developer"]}
+          <Typewriter
+            words={[
+              "Full Stack Developer",
+              "MERN Stack Developer",
+              "Frontend Developer",
+              "ReactJS Developer",
+            ]}
             loop={true}
             cursor
             cursorStyle="|"
@@ -29,29 +34,43 @@ export default function Hero() {
           />
         </h2>
         <p className="mt-3 text-base md:text-lg text-gray-700 tracking-tight leading-relaxed max-w-2xl">
-          Passionate Full stack developer with expertise in building scalable and
-          modern web applications. Experienced in working with front-end and
+          Passionate Full stack developer with expertise in building scalable
+          and modern web applications. Experienced in working with front-end and
           back-end technologies, ensuring seamless user experiences and
           high-performance solutions.
         </p>
 
         {/* button groups */}
         <div className="flex items-center space-x-6 mt-6">
-          <Button className="px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300" asChild>
-           <a href="#works">Hire Me</a> 
+          <Button
+            className="px-5 py-3 text-lg bg-blue-600 hover:bg-blue-500 hover:scale-105 transition-all duration-300"
+            asChild
+          >
+            <a href="#works">Hire Me</a>
           </Button>
           <Button
+          asChild
             variant="outline"
             className="px-5 py-3 text-lg flex items-center gap-2 group hover:text-blue-500 hover:border hover:border-blue-500 hover:scale-105 transition-all duration-300"
           >
-            Resume
-            <ArrowRight className="w-5 h-5 ransition-transform duration-300 group-hover:rotate-90" />
+            <a
+               href="/SAKTI_SUMANT_DAS_RESUME.pdf"
+               download="SAKTI_SUMANT_DAS_RESUME.pdf"
+              className="flex items-center gap-2" 
+            >
+              Resume
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-90" />
+            </a>
           </Button>
         </div>
 
         {/* Social Icons with Next.js Link */}
         <div className="flex items-center space-x-6 mt-10">
-          <a href="https://www.linkedin.com/in/sakti-sumant-das" target="_blank"   rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/sakti-sumant-das"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-700 hover:text-blue-600 hover:scale-110 transition-all duration-300"
@@ -62,7 +81,11 @@ export default function Hero() {
             </svg>
           </a>
 
-          <a href="https://github.com/dev-shakti" target="_blank"   rel="noopener noreferrer">
+          <a
+            href="https://github.com/dev-shakti"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-700 hover:text-black hover:scale-110 transition-all duration-300"
@@ -77,7 +100,11 @@ export default function Hero() {
             </svg>
           </a>
 
-          <a href="mailto:mailto:shakti.20k@gmail.com" target="_blank" rel="noopener noreferrer">
+          <a
+            href="mailto:mailto:shakti.20k@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 text-gray-700 hover:text-red-600 hover:scale-110 transition-all duration-300"
